@@ -3,6 +3,7 @@ package com.example.kotlinbasics
 fun main() {
     var myName = "Frank" // one way to declare variable using type inference
     var yourName : String = "Roman" // another way to declare variable specifying the type explicitly
+    
     print("Hello $myName and $yourName\n") // this is called a string template
 
     print("The last letter of my variable is ${yourName[myName.length-1]}\n") // using {} to insert function call is called template expression of string interpolation
