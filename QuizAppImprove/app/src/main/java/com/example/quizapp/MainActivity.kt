@@ -12,7 +12,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        initialize()
+        initialize_countries() // this will initialize the list of countries
 
         val button : Button = findViewById(R.id.submitButton)
         val textarea : EditText = findViewById(R.id.nameField)

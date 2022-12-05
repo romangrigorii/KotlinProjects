@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text = "Custom Dialog Title"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        ></TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text = "Custom Dialog contents. You can write anything you want in this area"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="14dp"
+        android:layout_margin="10dp"
+        ></TextView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:id="@+id/tv_submit"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="SUBMIT"
+            android:textColor="#FF0000"
+            android:foreground = "?attr/selectableItemBackground">
+        </TextView>
+        <TextView
+            android:id="@+id/tv_cancel"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:padding="10dp"
+            android:textColor="#00FF00"
+            android:text="CANCEL"
+            android:foreground = "?attr/selectableItemBackground">
+        </TextView>
+    </LinearLayout>
+
+</LinearLayout>

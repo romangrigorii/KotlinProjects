@@ -15,7 +15,7 @@ data class Country(val name: String, val code: String, val imageloc: Int)
 
 var allcountries = ArrayList<Country>() // This is an empty list
 
-fun initialize(){
+fun initialize_countries(){
     allcountries.add(Country("Andorra", "ad",R.drawable.ad))
     allcountries.add(Country("United Arab Emirates", "ae",R.drawable.ae))
     allcountries.add(Country("Afghanistan", "af",R.drawable.af))
