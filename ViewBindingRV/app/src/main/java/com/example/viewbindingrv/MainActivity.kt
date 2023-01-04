@@ -14,9 +14,9 @@ class MainActivity : AppCompatActivity() {
         // setContentView(R.layout.activity_main)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding?.root)
-        val adapter = MainAdapter(TaskList.taskList)
+        val adapter = MainAdapter(TaskList.taskList) // this is where we link up the adapter to the view, in this cae we initialize with task list
         //binding?.taskRv?.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
-        binding?.taskRv?.adapter = adapter // we assign an adapted to the taskRv in our main window
+        binding?.taskRv?.adapter = adapter // we assign an adapter to the taskRv in our main window
     }
 
     override fun onDestroy() {

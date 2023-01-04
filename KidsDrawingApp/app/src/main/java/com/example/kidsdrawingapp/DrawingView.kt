@@ -17,12 +17,24 @@ class DrawingView(context: Context, attrs: AttributeSet): View(context, attrs) {
     private var color = Color.BLACK
     private var canvas : Canvas? = null
     private var mPaths = ArrayList<CustomPath>()
-
+    private var mUndoPaths = ArrayList<CustomPath>()
 
     init {
         setUpDrawing()
     }
 
+    fun onClickUndo(){
+        if (mPaths.size>0){
+            mUndoPaths.add(mPaths.removeAt(mPaths.size - 1))
+            invalidate() // redraws the entire page
+        }
+    }
+    fun onClickRedo(){
+        if (mUndoPaths.size>0){
+            mPaths.add(mUndoPaths.removeAt(mUndoPaths.size - 1))
+            invalidate() // redraws the entire page
+        }
+    }
     private fun setUpDrawing(){
         mDrawPaint = Paint()
         mDrawPath = CustomPath(color, mBrushSize)
@@ -33,6 +45,8 @@ class DrawingView(context: Context, attrs: AttributeSet): View(context, attrs) {
         mCanvasPaint = Paint(Paint.DITHER_FLAG)
     }
 
+
+    // when the size of the view is changed we display the bitmap
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
         super.onSizeChanged(w, h, oldw, oldh)
         mCanvasBitmap = Bitmap.createBitmap(w,h,Bitmap.Config.ARGB_8888)
@@ -58,10 +72,9 @@ class DrawingView(context: Context, attrs: AttributeSet): View(context, attrs) {
             MotionEvent.ACTION_DOWN -> { // -> is a lambda expression
                 mDrawPath!!.color = color
                 mDrawPath!!.brushThickness = mBrushSize
-                //mDrawPath!!.reset() // this will reset the entire path
-                //mPaths.clear() // this piece of code is not necessary and I am not sure why
-                mDrawPath!!.moveTo(touchX!!,touchY!!)
-                mPaths.add(mDrawPath!!)
+                mDrawPath!!.reset() // this will reset the old path and build a new one
+                mDrawPath!!.moveTo(touchX!!,touchY!!) // this will get the path to start at a location which will anchor the path
+                mPaths.add(mDrawPath!!) // add the new DrawPath which will be updated at ACTION_MOVE state
             }
             MotionEvent.ACTION_MOVE -> {
                 mDrawPath!!.lineTo(touchX!!, touchY!!)
@@ -72,14 +85,14 @@ class DrawingView(context: Context, attrs: AttributeSet): View(context, attrs) {
             }
             else -> return false
         }
-        invalidate()
+        invalidate() // this is a redraw function
         return true
     }
 
     fun setSizeForBrush(newSize: Float){
         mBrushSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
         newSize, resources.displayMetrics) // this will set the size according to the screen size
-        mDrawPaint!!.strokeWidth = mBrushSize
+        mDrawPaint!!.strokeWidth = mBrushSize // actually changed the brush size
     }
 
     fun setColor(newColor : String){

@@ -1,4 +1,7 @@
 package com.example.viewbindingrv
 
-class Task {
+import java.sql.Timestamp
+
+data class Task(val title : String, val timestamp: String) {
+
 }

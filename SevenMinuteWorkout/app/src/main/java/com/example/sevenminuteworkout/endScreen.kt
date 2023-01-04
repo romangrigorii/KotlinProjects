@@ -4,7 +4,13 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.speech.tts.TextToSpeech
+import android.util.Log
+import android.widget.Toast
+import androidx.lifecycle.lifecycleScope
 import com.example.sevenminuteworkout.databinding.ActivityEndScreenBinding
+import kotlinx.coroutines.launch
+import java.text.SimpleDateFormat
+import java.util.*
 
 class endScreen : AppCompatActivity() {
 
@@ -16,7 +22,7 @@ class endScreen : AppCompatActivity() {
         setContentView(binding?.root)
 
         setSupportActionBar(binding?.toolBarFinish) // link up the toolbar with a variable
-        if (supportActionBar!=null){
+        if (supportActionBar==null){
             supportActionBar?.setDisplayHomeAsUpEnabled(true)
         }
         binding?.toolBarFinish?.setNavigationOnClickListener{
@@ -24,8 +30,23 @@ class endScreen : AppCompatActivity() {
         }
         binding?.finishBut?.setOnClickListener {// binding now replaces findByID code
             finish()
-//            val intent = Intent(this, MainActivity::class.java)
-//            startActivity(intent)
+        }
+        val dao = (application as WorkOutApp).db.historyDao() // this sets up the Dao
+        addDateToDatBase(dao)
+
+    }
+
+    private fun addDateToDatBase(historyDao: HistoryDao){
+        // create the date as an id
+        val c = Calendar.getInstance()
+        val dateTime = c.time
+        // Log.e("Date: ", "" + dateTime)
+        val sdf = SimpleDateFormat("dd MMM yyyy HH:mm:ss", Locale.getDefault())
+        val date = sdf.format(dateTime)
+        // Log.e("Date: ", "" + date)
+        // add the exercise with the date as an unique id
+        lifecycleScope.launch { // this launches the coroutine
+            historyDao.insert(HistoryEntity(date))
         }
     }
 }

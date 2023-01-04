@@ -28,8 +28,8 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
     private var player: MediaPlayer? = null
     private var exerciseAdapter : ExerciseStatusAdapter? = null
 
-    private val restTimerDur : Long = 10
-    private val exerciseTimerDur : Long = 30
+    private val restTimerDur : Long = 1
+    private val exerciseTimerDur : Long = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
