@@ -37,15 +37,14 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         setContentView(binding?.root)
 
         setSupportActionBar(binding?.toolBarExercise) // link up the toolbar with a variable
-        tts = TextToSpeech(this@ExerciseActivity, this) // sets up text to speech
-
-        if (supportActionBar!=null){
-            supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        }
-        exerciseList = constants.defaultExerciseList()
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
         binding?.toolBarExercise?.setNavigationOnClickListener{
             onBackPressed() // performs the back actions that can be performed with the button on the action bar of the phone
         }
+
+        tts = TextToSpeech(this@ExerciseActivity, this) // sets up text to speech
+        exerciseList = constants.defaultExerciseList()
+
 
         setupRestView()
         setupExerciseStatusRecyclerView()

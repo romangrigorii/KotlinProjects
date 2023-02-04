@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Analytics"
+    android:background="@color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/LLchart"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:fitsSystemWindows="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintLeft_toRightOf="parent"
+        android:background="@drawable/gradient_bg"
+        android:orientation="vertical"
+        android:layout_margin="20dp">
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/lineChart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="9dp"
+            app:layout_constraintEnd_toEndOf="@id/LLchart"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@id/LLchart"
+            app:layout_constraintTop_toTopOf="@id/LLchart" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:rotation="-90"
+        app:layout_constraintTop_toTopOf="@id/LLchart"
+        app:layout_constraintBottom_toBottomOf="@id/LLchart"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/LLchart"
+        android:text = "questions correct"
+        android:textColor="@color/black"
+        ></TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/LLchart"
+        app:layout_constraintLeft_toLeftOf="@id/LLchart"
+        app:layout_constraintRight_toRightOf="@id/LLchart"
+        android:text = "questions answered"
+        android:textColor="@color/black"
+        ></TextView>
+
+    <TextView
+        android:id="@+id/TVscores"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="You scores: "
+        android:textColor="@color/col1"
+        android:layout_marginTop="25dp"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="@id/LLchart"
+        app:layout_constraintTop_toBottomOf="@id/LLchart"
+        />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/CLtext1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="@id/LLchart"
+        app:layout_constraintTop_toBottomOf="@id/TVscores"
+        android:layout_marginLeft="20dp">
+
+        <TextView
+            android:id="@+id/TVtext1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lifetime: "
+            android:textColor="@color/col4"
+            android:layout_marginTop="10dp"
+            android:textSize="25dp"
+            app:layout_constraintStart_toStartOf="@id/CLtext1"
+            app:layout_constraintTop_toTopOf="@id/CLtext1"
+            />
+
+        <TextView
+            android:id="@+id/TVscore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0/0 "
+            android:textColor="@color/black"
+            android:layout_marginTop="10dp"
+            android:textSize="25dp"
+            app:layout_constraintTop_toTopOf="@id/CLtext1"
+            app:layout_constraintStart_toEndOf="@id/TVtext1"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/CLtext2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="@id/CLtext1"
+        app:layout_constraintTop_toBottomOf="@id/CLtext1"
+        android:layout_marginLeft="20dp">
+
+        <TextView
+            android:id="@+id/TVtext3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Last 15 questions score: "
+            android:textColor="@color/col4"
+            android:layout_marginTop="10dp"
+            android:textSize="25dp"
+            app:layout_constraintStart_toStartOf="@id/CLtext2"
+            app:layout_constraintTop_toTopOf="@id/CLtext2"
+            />
+
+        <TextView
+            android:id="@+id/TVscore15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0/0 "
+            android:textColor="@color/black"
+            android:layout_marginTop="10dp"
+            android:textSize="25dp"
+            app:layout_constraintTop_toTopOf="@id/CLtext2"
+            app:layout_constraintStart_toEndOf="@id/TVtext3"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/TVtext5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Readiness status: "
+        android:textColor="@color/col1"
+        android:layout_marginTop="10dp"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="@id/LLchart"
+        app:layout_constraintTop_toBottomOf="@id/CLtext2"
+        android:paddingTop="20dp"
+        />
+
+    <TextView
+        android:id="@+id/TVstatus1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Keep practicing "
+        android:textColor="@color/col2"
+        android:layout_marginTop="10dp"
+        android:textSize="25dp"
+        app:layout_constraintStart_toStartOf="@id/LLchart"
+        app:layout_constraintTop_toBottomOf="@id/TVtext5"
+        />
+    <TextView
+        android:id="@+id/TVstatus2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="You are ready to take the test "
+        android:textColor="@color/col2"
+        android:layout_marginTop="10dp"
+        android:textSize="25dp"
+        app:layout_constraintStart_toStartOf="@id/LLchart"
+        app:layout_constraintTop_toBottomOf="@id/TVstatus1"
+        />
+    <TextView
+        android:id="@+id/TVstatus3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="You will likely pass in top 5% "
+        android:textColor="@color/col2"
+        android:layout_marginTop="10dp"
+        android:textSize="25dp"
+        app:layout_constraintStart_toStartOf="@id/LLchart"
+        app:layout_constraintTop_toBottomOf="@id/TVstatus2"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

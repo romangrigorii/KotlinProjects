@@ -41,15 +41,10 @@ class HistoryActivity : AppCompatActivity() {
                     binding?.rvHistory?.layoutManager = LinearLayoutManager(this@HistoryActivity)
 
                     val dates = ArrayList<String>()
-                    for (date in allCompletedDates){
-                        dates.add(date.date)
+                    allCompletedDates.forEach{
+                        dates.add(it.date)
                     }
-                    val historyAdapter = HistoryAdapter(dates)
-                    binding?.rvHistory?.adapter = historyAdapter
-
-//                    binding?.rvHistory?.adapter = HistoryAdapter(allCompletedDates.forEach{
-//                        it.date
-//                    } as ArrayList<String>)
+                    binding?.rvHistory?.adapter = HistoryAdapter(dates)
 
                 } else {
                     binding?.tvHistory?.visibility = View.GONE

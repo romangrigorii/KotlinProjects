@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "222978698163",
+    "project_id": "loginauth-b128f",
+    "storage_bucket": "loginauth-b128f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:222978698163:android:5e42c0f9ec5697a281f9c6",
+        "android_client_info": {
+          "package_name": "com.example.loginauth"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "222978698163-otr0h8926jour7u26f5e2qlq0nib38ck.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.loginauth",
+            "certificate_hash": "807b46832c2d2006d31b5b98cfee41de35a0caaf"
+          }
+        },
+        {
+          "client_id": "222978698163-e4lmcq74hnjbo54h8ulfln17l0oakbnc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDx0suE-aj7CS2jXfaIA7UHhIg5nkZNeJo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "222978698163-e4lmcq74hnjbo54h8ulfln17l0oakbnc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

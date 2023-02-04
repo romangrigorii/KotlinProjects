@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <FrameLayout
+        android:id = "@+id/fl_drawing_view_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="1dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src = "@drawable/backgroundli2"
+            android:foreground="@color/col3a"
+            android:scaleType="centerCrop">
+        </ImageView>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/llMain"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="55dp"
+            android:layout_marginBottom="35dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/log_in_back_groundstyle"
+            >
+            <TextView
+                android:id="@+id/tvSignIn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="30sp"
+                android:text="Sign in"
+                android:textStyle="bold"
+                android:textColor="@color/col4"
+                android:gravity="center"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:paddingTop="30dp"
+                android:paddingBottom="50dp">
+            </TextView>
+
+            <EditText
+                android:id="@+id/etUsername"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                app:layout_constraintTop_toBottomOf="@id/tvSignIn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:hint="Username"
+                android:textColorHint = "@color/col2"
+                android:inputType="textCapWords"
+                android:textColor="@color/col1"
+                android:textSize="15sp"
+                android:background="@drawable/log_in_info_style_white"
+                android:layout_margin="10dp"
+                android:drawableLeft="@drawable/ic_baseline_person"
+                android:drawablePadding="10dp"
+                android:paddingTop="50dp"
+                android:padding="20dp"
+                android:paddingBottom="50dp">
+            </EditText>
+
+            <EditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                app:layout_constraintTop_toBottomOf="@id/etUsername"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:hint="Password"
+                android:textColorHint = "@color/col2"
+                android:inputType="textCapWords"
+                android:textColor="@color/col1"
+                android:textSize="15sp"
+                android:background="@drawable/log_in_info_style_white"
+                android:layout_margin="10dp"
+                android:drawableLeft="@drawable/ic_baseline_key"
+                android:drawablePadding="10dp"
+                android:padding="20dp">
+            </EditText>
+
+
+            <LinearLayout
+                android:id="@+id/llAccount"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/etPassword"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_margin="40dp"
+                android:gravity="center"
+
+                >
+                <TextView
+                    android:id="@+id/tvCreateAccount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Create Account"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textColor="@color/col1"
+                    android:textSize="20sp"/>
+
+                <TextView
+                    android:id="@+id/tvForgotPassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Forgot Password"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textColor="@color/col1"
+                    android:textSize="20sp"/>
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id= "@+id/butLogin"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_gravity="center_horizontal"
+                android:text="LOGIN"
+                android:background="@color/col1"
+                android:layout_marginTop="30dp"
+                android:textColor="@color/col3"
+                app:layout_constraintTop_toBottomOf="@id/llAccount"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textSize="25sp"
+                >
+            </androidx.appcompat.widget.AppCompatButton>
+
+            <TextView
+                android:id="@+id/tvSignInWith"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="sign in with:"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textColor="@color/col1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/llMedia"
+                app:layout_constraintTop_toBottomOf="@id/butLogin"
+                android:layout_marginTop="5dp"
+                android:textSize="20sp"/>
+
+            <LinearLayout
+                android:id="@+id/llMedia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/butLogin"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:gravity="center"
+                >
+                <ImageView
+                    android:id="@+id/butGoogle"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/google"
+                    android:layout_weight="10"
+                    ></ImageView>
+                <ImageView
+                    android:id="@+id/butFacebook"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/facebook"
+                    android:layout_weight="5"
+                    android:visibility="gone"
+                    ></ImageView>
+                <ImageView
+                    android:id="@+id/butTwitter"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/twitter"
+                    android:layout_weight="10"
+                    android:visibility="gone"
+                    ></ImageView>
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

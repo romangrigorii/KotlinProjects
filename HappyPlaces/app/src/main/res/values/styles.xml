@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name = "AppTheme" parent = "Theme.AppCompat.Light.DarkActionBar">
+        <item name = "colorPrimary">@color/col1</item>
+        <item name = "colorPrimaryDark">@color/col3</item>
+        <item name = "colorAccent">@color/col5</item>
+    </style>
+    <style name="CustomNoActionBarTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <item name="android:statusBarColor">@color/col1</item>
+    </style>
+    <style name="CustomToolbarStyle">
+        <item name="android:textColorPrimary">@color/col1</item>
+        <item name="android:colorControlNormal">@color/col3</item>
+    </style>
+</resources>
